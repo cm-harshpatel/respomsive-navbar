@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Responsive Navbar</title>
+</head>
+<body>
+    
+    <header>
+        <div class="menu-bar">
+            <h1 id="logo">L O G O</h1>
+            <div class="hamburger">
+                <span id="id1"></span>
+                <span id="id2"></span>
+                <span id="id3"></span>
+            </div>
+            <ul  class="menu-items">
+                <li id="home" class="active">HOME</li>
+                <li id="services">SERVICES</li>
+                <li id="contact-us">CONTACT US</li>
+                <li id="log-in">LOG IN</li>
+            </ul>
+            
+        </div>
+    </header>
+   <script>
+       const hamburger = document.querySelector(".hamburger");
+       const menuItems = document.querySelector(".menu-items");
+       const id1 = document.querySelector("#id1");
+       const id2 = document.querySelector("#id2");
+       const id3 = document.querySelector("#id3");
+
+       hamburger.addEventListener('click', ()=>{
+       menuItems.classList.toggle("menu-items-new");
+       id1.classList.toggle("id1");
+       id2.classList.toggle("id2");
+       id3.classList.toggle("id3");
+       })
+
+       const home = document.querySelector("#home");
+       const services = document.querySelector("#services");
+       const contactUs = document.querySelector("#contact-us");
+       const logIn = document.querySelector("#log-in");
+
+
+      
+
+
+       home.addEventListener("click", addRemoveHome);
+       function addRemoveHome(){
+
+        const isClassThereHome = home.classList.contains("active");
+       const isClassThereServices = services.classList.contains("active");
+       const isClassThereContactUs = contactUs.classList.contains("active");
+       const isClassThereLogIn = logIn.classList.contains("active");
+        
+        //    if(isClassThereHome == true){
+        //     home.classList.remove("active");
+        //     // console.log("class exist")
+        //    }
+           if(isClassThereHome == false){
+            home.classList.add("active");
+            // console.log("class not exist");
+
+            if(isClassThereLogIn || isClassThereContactUs || isClassThereServices  == true ){
+             logIn.classList.remove("active");   
+             contactUs.classList.remove("active");
+             services.classList.remove("active");
+         }
+
+                
+           }
+       }
+
+       // services click
+       services.addEventListener("click", addRemoveServices);
+       function addRemoveServices(){
+
+        const isClassThereHome = home.classList.contains("active");
+       const isClassThereServices = services.classList.contains("active");
+       const isClassThereContactUs = contactUs.classList.contains("active");
+       const isClassThereLogIn = logIn.classList.contains("active");
+        
+        // if(isClassThereServices == true){
+        //  services.classList.remove("active");
+        // //  console.log("class exist");
+        // }
+        if(isClassThereServices == false){
+         services.classList.add("active");
+        //  console.log("class not exist");
+
+        if(isClassThereHome || isClassThereContactUs || isClassThereLogIn  == true ){
+             home.classList.remove("active");   
+             contactUs.classList.remove("active");
+             logIn.classList.remove("active");
+         }
+     
+        }
+    }
+
+    contactUs.addEventListener("click", addRemoveContactUs);
+       function addRemoveContactUs(){
+
+        const isClassThereHome = home.classList.contains("active");
+       const isClassThereServices = services.classList.contains("active");
+       const isClassThereContactUs = contactUs.classList.contains("active");
+       const isClassThereLogIn = logIn.classList.contains("active");
+        
+        // if(isClassThereContactUs == true){
+        //  contactUs.classList.remove("active");
+        // //  console.log("class exist")
+        // }
+        if(isClassThereContactUs == false){
+         contactUs.classList.add("active");
+        //  console.log("class not exist");
+
+        if(isClassThereHome || isClassThereLogIn || isClassThereServices  == true ){
+             home.classList.remove("active");   
+             logIn.classList.remove("active");
+             services.classList.remove("active");
+         }
+     
+        }
+    }
+
+
+    logIn.addEventListener("click", addRemoveLogIn);
+       function addRemoveLogIn(){
+
+       const isClassThereHome = home.classList.contains("active");
+       const isClassThereServices = services.classList.contains("active");
+       const isClassThereContactUs = contactUs.classList.contains("active");
+       const isClassThereLogIn = logIn.classList.contains("active");
+        
+        // if(isClassThereLogIn == true){
+        //  logIn.classList.remove("active");
+        // //  console.log("class exist")
+        // }
+        if(isClassThereLogIn == false){
+         logIn.classList.add("active");
+        //  console.log("class not exist");
+
+         if(isClassThereHome || isClassThereContactUs || isClassThereServices  == true ){
+             home.classList.remove("active");   
+             contactUs.classList.remove("active");
+             services.classList.remove("active");
+         }
+
+     
+        }
+    }
+
+    
+        
+       
+    
+   </script>
+</body>
+</html>

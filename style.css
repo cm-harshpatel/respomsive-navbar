@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+body {
+  height: 2000px;
+}
+
+.menu-bar {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: white;
+  box-shadow: 0px 1px 1px gray;
+  /* background-color: #7142ce;
+  box-shadow: 0px 1px 1px #7142ce; */
+}
+
+#logo {
+  margin-left: 30px;
+  color: black;
+}
+
+.hamburger {
+  width: 28px;
+  height: 28px;
+  margin: 5px 0;
+  /* padding-top: 10px; */
+  position: relative;
+  display: none;
+  margin-right: 20px;
+  padding: 4px 0;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: black;
+}
+
+.menu-items {
+  display: flex;
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+.menu-items li {
+  margin-left: 20px;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  transition: ease 1s;
+  color: #ff916c;
+}
+
+.menu-items li:hover {
+  border-bottom: 1px solid #ff916c;
+}
+
+.menu-items .active {
+  color: BLACK;
+  border-bottom: 1px solid BLACK;
+  transition: ease 1s;
+}
+
+.menu-items .active:hover {
+  border-bottom-color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu-items {
+    position: absolute;
+    width: inherit;
+    margin: 0px auto;
+    flex-direction: column;
+    /* top: 40px; */
+    top: -350%;
+    align-items: center;
+    padding-top: 5px;
+    height: 100vh-41px;
+    transition: ease 600ms;
+    z-index: -1;
+    background-color: #d5cfe2;
+  }
+
+  .menu-items li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-left: 0px;
+    color: #f35925;
+  }
+
+  .id1 {
+    transform: rotatez(41deg);
+    transform-origin: left top;
+  }
+
+  .id2 {
+    opacity: 0;
+  }
+
+  .id3 {
+    transform: rotatez(-41deg);
+    transform-origin: left bottom;
+  }
+
+  .menu-items-new {
+    top: 41px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  .menu-items-new {
+    top: 38px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  h1 {
+    font-size: 15px;
+  }
+}
